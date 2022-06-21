@@ -22,11 +22,11 @@ TANK3:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Turreted:
 		TurnSpeed: 25
 		Offset: -125,0,50
@@ -74,11 +74,11 @@ AATANK:
 		Speed: 115
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
 	Armament:
@@ -126,7 +126,7 @@ TRANSPRT:
 		Speed: 110
 		PauseOnCondition: notmobile || ecm-disabled
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 		MinRange: 2c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -172,11 +172,11 @@ ARTIL:
 		Speed: 95
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 5c0
-		MinRange: 3c0
+		Range: 10c0
+		MinRange: 5c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 5c0
 	Armament:
 		Weapon: SmallArtillery
 		MuzzleSequence: muzzle
@@ -292,11 +292,11 @@ TANK16:
 		Speed: 95
 		TurnSpeed: 25
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	AutoTarget:
 		ScanRadius: 8
 		InitialStance: AttackAnything
@@ -324,18 +324,18 @@ TANK6:
 	Mobile:
 		Speed: 128
 	RevealsShroud:
-		Range: 5c0
-		MinRange: 2c0
+		Range: 7c0
+		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 2c0
+		Range: 3c0
 	Minelayer:
 		Mines: mine1, mine2, mine3, mine4
 	MineImmune:
 	AmmoPool:
 		Ammo: 5
 	DetectCloaked:
-		Range: 5c0
+		Range: 6c0
 		DetectionTypes: Mine
 	RenderDetectionCircle:
 	Explodes:
@@ -379,11 +379,11 @@ TANK5:
 		Speed: 80
 		TurnSpeed: 25
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 
 TANK10:
 	Inherits: ^TrackedVehicle
@@ -408,11 +408,11 @@ TANK10:
 		Speed: 80
 		TurnSpeed: 25
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Armament:
 		Weapon: VoltageArc
 		LocalOffset: 0,0,213
@@ -500,11 +500,11 @@ TANK11:
 		TurnSpeed: 25
 		Speed: 90
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	WithMuzzleOverlay:
 
 TANK12:
@@ -578,11 +578,11 @@ ARTIL3:
 		Speed: 85
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 10c0
+		MinRange: 5c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 5c0
 	Armament:
 		Weapon: DoubleBarrelledArtillery
 		MuzzleSequence: muzzle
@@ -623,11 +623,11 @@ BUILDER:
 		Speed: 100
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	RenderSprites:
 		Image: builder1
 		FactionImages:
@@ -694,11 +694,11 @@ MINER:
 		TurnSpeed: 30
 		Speed: 80
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	GrantConditionOnTerrain:
 		Condition: validterrain
 		TerrainTypes: Ore
@@ -742,10 +742,10 @@ MISSILETANK:
 		Speed: 80
 	RevealsShroud:
 		Range: 7c0
-		MinRange: 3c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
 		Offset: -250,-50,100
@@ -780,11 +780,11 @@ TANK8:
 		Speed: 150
 	RevealsShroud:
 		Range: 7c0
-		MinRange: 3c0
+		MinRange: 4c0
 	CreatesShroud:
 		Range: 9c0
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	RenderShroudCircle:
 	DetectCloaked:
 		Range: 2c0
@@ -810,11 +810,11 @@ TANK1:
 	Mobile:
 		Speed: 140
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Demolition:
 		DetonationDelay: 45
 		EnterBehaviour: Dispose
@@ -852,11 +852,11 @@ TANK2:
 	Mobile:
 		Speed: 500
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 
 TANKER1:
 	Inherits: ^Vehicle
@@ -875,13 +875,13 @@ TANKER1:
 	Mobile:
 		Speed: 128
 	RevealsShroud:
-		Range: 4c0
-		MinRange: 2c0
+		Range: 6c0
+		MinRange: 1c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
 		Range: 2c0
 	ResourceTransporter:
-		Capacity: 8
+		Capacity: 9
 	SpawnActorOnDeath:
 		Actor: goldball
 	-SpawnScrapOnDeath:
