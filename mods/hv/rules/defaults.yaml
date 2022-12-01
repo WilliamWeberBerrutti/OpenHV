@@ -187,7 +187,7 @@
 		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 8c0
+		Range: 4c0
 	DetectCloaked:
 		Range: 1c0
 
