@@ -246,15 +246,15 @@ StealthTankMissile:
 
 Patriot:
 	Inherits: ^AntiAirMissile
-	ReloadDelay: 55
-	Range: 8c0
+	ReloadDelay: 46
+	Range: 9c0
 	Report: rocketlaunch03.wav
 	ValidTargets: Air
 	Projectile: Missile
 		Arm: 1
 		VerticalRateOfTurn: 140
 		RangeLimit: 25c0
-		Speed: 300
+		Speed: 600
 		MinimumLaunchSpeed: 75
 		MaximumLaunchSpeed: 96
 		Blockable: false
