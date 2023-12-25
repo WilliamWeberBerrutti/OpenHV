@@ -98,6 +98,12 @@ HelicopterChainGun:
 	Burst: 4
 	Warhead@Damage: SpreadDamage
 		Damage: 1000
+		Versus:
+			None: 180
+			Steel: 15
+			Light: 40
+			Heavy: 10
+			Concrete: 5
 	Warhead@Incendiary: TreeDamage
 		Spread: 64
 		Damage: 1000
@@ -111,7 +117,16 @@ AircraftChainGun:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@Damage: SpreadDamage
-		Damage: 6000
+		Damage: 750
+		Versus:
+			None: 540
+			Steel: 60
+			Light: 60
+			Heavy: 40
+			Concrete: 35
+	Warhead@Incendiary: TreeDamage
+		Spread: 64
+		Damage: 750
 
 ShellCasing:
 	Inherits: SmallSplash
