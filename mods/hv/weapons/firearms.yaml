@@ -149,14 +149,7 @@ AircraftChainGunAir:
 	Warhead@Damage: SpreadDamage
 		Damage: 375
 		Versus:
-			None: 1080
-			Steel: 120
 			Light: 207
-			Heavy: 80
-			Concrete: 70
-	Warhead@Incendiary: TreeDamage
-		Spread: 64
-		Damage: 375
 
 ShellCasing:
 	Inherits: SmallSplash
