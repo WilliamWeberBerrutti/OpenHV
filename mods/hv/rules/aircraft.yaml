@@ -78,7 +78,7 @@ PLANE2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 10000
+		HP: 20000
 	RevealsShroud:
 		Range: 11c0
 		MinRange: 4c0
@@ -231,7 +231,7 @@ BANSHEE:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 10000
+		HP: 20000
 	RevealsShroud:
 		Range: 11c0
 		MinRange: 4c0
