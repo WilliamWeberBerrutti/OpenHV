@@ -280,7 +280,7 @@ COPTER2:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
 		Prerequisites: ~starport.sc
-		Description: Vehicle Transport Helicopter.\n  Armed with light machine gun.\n\n  Can load pods\n  and lift one vehicle.
+		Description: Vehicle Transport Helicopter.\n  Armed with light missiles.\n  Can load pods\n  and lift one vehicle.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -309,12 +309,12 @@ COPTER2:
 		DecorationBounds: 2048, 1843
 	Turreted:
 		TurnSpeed: 80
-		Offset: 600,0,100
+		Offset: 100,0,100
 	AttackTurreted:
 		RequiresCondition: airborne
 	Armament:
-		Weapon: Vulcan
-		LocalOffset: 0,0,-400
+		Weapon: DropshipMissile
+		LocalOffset: 700,0,0, 700,0,0
 	Cargo:
 		Types: Scout
 		MaxWeight: 8
@@ -419,7 +419,7 @@ DROPSHIP:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
 		Prerequisites: ~starport.yi
-		Description: Vehicle Transport Shuttle.\n  Armed with light missiles.\n  Can load pods\n  and lift one vehicle.
+		Description: Vehicle Transport Shuttle.\n  Armed with light machine gun.\n  Can load pods\n  and lift one vehicle.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -445,12 +445,14 @@ DROPSHIP:
 		Sequence: fly
 		Name: fly
 		RequiresCondition: airborne
-	AttackFrontal:
-		FacingTolerance: 0
+	Turreted:
+		TurnSpeed: 80
+		Offset: 100,0,100
+	AttackTurreted:
 		RequiresCondition: airborne
 	Armament:
-		Weapon: DropshipMissile
-		LocalOffset: 700,500,0, 700,-500,0
+		Weapon: Vulcan
+		LocalOffset: 0,0,-400
 	Selectable:
 		DecorationBounds: 2048, 1848
 	Cargo:
