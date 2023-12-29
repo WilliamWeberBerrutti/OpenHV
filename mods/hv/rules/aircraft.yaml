@@ -88,18 +88,19 @@ PLANE2:
 		Range: 4c0
 		Type: GroundPosition
 	Armament:
-		Weapon: ShipMissile
-		LocalOffset: 256,375,0, 256,-375,0
+		Weapon: Plasma
+		MuzzleSequence: muzzle
+		LocalOffset: 700,200,0, 700,-200,0
 		PauseOnCondition: !ammo
 	AmmoPool:
-		Ammo: 4
+		Ammo: 8
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
 	ReloadAmmoPool:
-		Delay: 200
+		Delay: 100
 		Count: 2
 	AttackAircraft:
 		FacingTolerance: 20
@@ -249,9 +250,8 @@ BANSHEE:
 		FacingTolerance: 0
 		RequiresCondition: airborne
 	Armament:
-		Weapon: Plasma
-		MuzzleSequence: muzzle
-		LocalOffset: 700,200,0, 700,-200,0
+		Weapon: ShipMissile
+		LocalOffset: 256,125,0, 256,-125,0
 		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 6
