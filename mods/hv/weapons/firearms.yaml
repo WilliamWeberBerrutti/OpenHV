@@ -90,28 +90,73 @@ BikeChainGun:
 	StartBurstReport: ccbysmgfire02.wav
 	BurstDelays: 2
 
-HelicopterChainGun:
+HelicopterChainGunGround:
 	Inherits: ^AircraftChainGun
+	ValidTargets: Water, Ground, Tree, Lava, Swamp
 	ReloadDelay: 10
 	Range: 6c0
 	MinRange: 0c768
 	Burst: 4
 	Warhead@Damage: SpreadDamage
-		Damage: 1000
+		Damage: 250
+		Versus:
+			None: 540
+			Steel: 60
+			Light: 325
+			Heavy: 40
+			Concrete: 20
 	Warhead@Incendiary: TreeDamage
 		Spread: 64
-		Damage: 1000
+		Damage: 250
 
-AircraftChainGun:
+HelicopterChainGunAir:
+	Inherits: HelicopterChainGunGround
+	ValidTargets: Air
+	Warhead@Damage: SpreadDamage
+		Versus:
+			Light: 400
+
+AircraftChainGunGround:
 	Inherits: ^AircraftChainGun
+	ValidTargets: Water, Ground, Tree, Lava, Swamp
 	ReloadDelay: 3
 	Range: 6c0
-	MinRange: 2c0
+	MinRange: 1c0
 	Burst: 16
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@Damage: SpreadDamage
-		Damage: 6000
+		Damage: 375
+		Versus:
+			None: 600
+			Steel: 120
+			Light: 400
+			Heavy: 80
+			Concrete: 70
+	Warhead@Incendiary: TreeDamage
+		Spread: 64
+		Damage: 375
+
+AircraftChainGunAir:
+	Inherits: ^AircraftChainGun
+	ValidTargets: Air
+	ReloadDelay: 3
+	Range: 6c0
+	MinRange: 1c0
+	Burst: 16
+	Projectile: InstantHit
+		Blockable: false
+	Warhead@Damage: SpreadDamage
+		Damage: 375
+		Versus:
+			None: 1080
+			Steel: 120
+			Light: 253
+			Heavy: 80
+			Concrete: 70
+	Warhead@Incendiary: TreeDamage
+		Spread: 64
+		Damage: 375
 
 ShellCasing:
 	Inherits: SmallSplash
