@@ -32,7 +32,7 @@ SCOUT2:
 	Buildable:
 		Queue: Pod
 		Description: Fast scout vehicle.\nShoots surface to air/ground rockets.\n  Strong vs Tanks and Aircraft\n  Weak vs Pods
-		Prerequisites: ~module
+		Prerequisites: ~module.sc
 		BuildPaletteOrder: 20
 	Valued:
 		Cost: 225
@@ -40,17 +40,13 @@ SCOUT2:
 		Name: Rocket Pod
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	Armament@Ground:
-		Weapon: LightAntiTankRocket
-		MuzzleSequence: muzzle
-		LocalOffset: 50,0,0
-	Armament@Air:
-		Weapon: LightAntiAirRocket
+	Armament@Primary:
+		Weapon: LightPodRocket
 		MuzzleSequence: muzzle
 		LocalOffset: 50,0,0
 	Armament@Garrisoned:
 		Name: garrisoned
-		Weapon: RapidAntiTankRocket
+		Weapon: RapidPodRocket
 		MuzzleSequence: muzzle
 	AttackFrontal:
 		PauseOnCondition: ecm-disabled
@@ -63,10 +59,10 @@ MORTARPOD:
 	Buildable:
 		Queue: Pod
 		Description: Fast support vehicle.\nArmed with portable mortar gun.\n  Strong vs Pods and Buildings\n  Weak vs Tanks
-		Prerequisites: ~module.yi, factory
-		BuildPaletteOrder: 40
+		Prerequisites: ~module.sc, factory
+		BuildPaletteOrder: 50
 	Valued:
-		Cost: 175
+		Cost: 150
 	Tooltip:
 		Name: Mortar Pod
 	UpdatesPlayerStatistics:
@@ -83,9 +79,6 @@ MORTARPOD:
 		PauseOnCondition: ecm-disabled
 		FacingTolerance: 0
 	WithMuzzleOverlay:
-	Explodes:
-		Weapon: MortarPodExplode
-		EmptyWeapon: MortarPodExplode
 
 SNIPERPOD:
 	Inherits: ^Pod
@@ -119,8 +112,6 @@ SNIPERPOD:
 		PauseOnCondition: ecm-disabled
 		FacingTolerance: 0
 	WithMuzzleOverlay:
-	DetectCloaked:
-		Range: 2c0
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
@@ -160,11 +151,6 @@ FLAMEPOD:
 	AttackFrontal:
 		PauseOnCondition: ecm-disabled
 		FacingTolerance: 10
-	DetectCloaked:
-		Range: 2c0
-	Explodes:
-		Weapon: FlamePodExplode
-		EmptyWeapon: FlamePodExplode
 	Voiced:
 		VoiceSet: FlamePodVoice
 
@@ -173,7 +159,7 @@ TECHNICIAN:
 	Inherits@Selection: ^SelectableSupportUnit
 	Buildable:
 		Queue: Pod
-		Description: Field technician.\nInfiltrates and captures enemy structures.\n  Unarmed
+		Description: Field technician.\nInfiltrates and captures enemy structures.\nHeals pods.\n  Unarmed
 		Prerequisites: ~module
 		BuildPaletteOrder: 30
 	Valued:
@@ -212,15 +198,18 @@ TECHNICIAN:
 	AttackFrontal:
 		PauseOnCondition: ecm-disabled
 		FacingTolerance: 0
+	DetectCloaked:
+		Range: 2c0
 
 BROKERPOD:
 	Inherits: ^Pod
 	Inherits@Selection: ^SelectableSupportUnit
-	Buildable:
-		Queue: Pod
-		Description: Financial analyst.\nInvests into stock market for dividents.\n  Unarmed
-		Prerequisites: ~module.yi, techcenter
-		BuildPaletteOrder: 60
+	# Disabled for now, for skirmish and multiplayer games
+	# Buildable:
+	# 	Queue: Pod
+	# 	Description: Financial analyst.\nInvests into stock market for dividents.\n  Unarmed
+	# 	Prerequisites: techcenter
+	# 	BuildPaletteOrder: 6
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -260,11 +249,11 @@ BROKERPOD:
 
 ELITEPOD:
 	Inherits: ^Helicopter
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
+	Inherits@AutoTarget: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Pod
 		Description: Elite airborn vehicle.\nArmed with heavy machine gun.\n  Strong vs Pods, Light Vehicles and Aircraft.\n  Weak vs Tanks and Buildings.
-		Prerequisites: ~module.sc, techcenter
+		Prerequisites: ~module, techcenter
 		BuildPaletteOrder: 60
 	Valued:
 		Cost: 600
@@ -302,12 +291,12 @@ ELITEPOD:
 
 BOMBERPOD:
 	Inherits: ^Pod
-	Inherits@AutoTarget: ^AutoTargetGround
+	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Pod
 		Description: Remote controlled mine. \nExplodes when reaches enemy.
-		Prerequisites: ~module.sc, radar
-		BuildPaletteOrder: 50
+		Prerequisites: ~module.yi, radar
+		BuildPaletteOrder: 40
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -344,18 +333,16 @@ BOMBERPOD:
 
 ELECTRICPOD:
 	Inherits: ^Pod
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
+	Inherits@AutoTarget: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Pod
-		Description: Breakthrough vehicle.\nArmed with lightning gun.\n  Strong vs Pods, Vehicles and Buildings.
-		Prerequisites: ~module.yi, techcenter
-		BuildPaletteOrder: 60
+		Description: Fast scout vehicle.\nShoots surface to air/ground electricity.\n  Strong vs Tanks and Aircraft\n  Weak vs Pods
+		Prerequisites: ~module.yi
+		BuildPaletteOrder: 20
 	Valued:
-		Cost: 650
+		Cost: 225
 	Tooltip:
 		Name: Electric Pod
-	Health:
-		HP: 10000
 	Mobile:
 		Voice: Move
 	Voiced:
@@ -367,7 +354,7 @@ ELECTRICPOD:
 		LocalOffset: 350,0,0
 	Armament@Garrisoned:
 		Name: garrisoned
-		Weapon: PodVoltageArc
+		Weapon: RapidPodVoltageArc
 	AttackFrontal:
 		PauseOnCondition: ecm-disabled
 		FacingTolerance: 0
