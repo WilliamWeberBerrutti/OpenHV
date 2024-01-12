@@ -1770,7 +1770,7 @@ HARBOR:
 	Targetable:
 		TargetTypes: Ground, Structure, WaterBuilding
 	Health:
-		HP: 40000
+		HP: 80000
 	Armor:
 		Type: Steel
 	RevealsShroud:
