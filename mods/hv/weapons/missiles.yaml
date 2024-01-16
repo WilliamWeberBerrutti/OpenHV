@@ -15,6 +15,7 @@
 		HorizontalRateOfTurn: 20
 		TrailImage: smoke
 		CruiseAltitude: 2c0
+		RangeLimit: -1
 	Warhead@Smudge: LeaveSmudge
 		SmudgeType: Crater
 		Chance: 25
@@ -169,6 +170,7 @@ BoatMissileAntiGround:
 		ContrailLength: 4
 		ContrailStartWidth: 0c32
 		ContrailStartColor: F29100
+		RangeLimit: -1
 	Warhead@Damage: SpreadDamage
 		Spread: 126
 		Damage: 1000
@@ -199,6 +201,7 @@ BoatMissileAntiAir:
 		HorizontalRateOfTurn: 60
 		TrailImage: small_smoke
 		CruiseAltitude: 2c0
+		RangeLimit: -1
 	Warhead@Damage: SpreadDamage
 		Spread: 128
 		Damage: 800
@@ -391,6 +394,7 @@ Torpedo:
 		TrailImage: bubble
 		HorizontalRateOfTurn: 10
 		VerticalRateOfTurn: 10
+		RangeLimit: -1
 	Warhead@Effect: CreateEffect
 		Explosions: small
 		ImpactSounds: explosion06.wav
