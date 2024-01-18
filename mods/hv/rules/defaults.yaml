@@ -292,8 +292,8 @@
 	ActorLostNotification:
 		TextNotification: notification-unit-lost
 	Explodes:
-		Weapon: UnitExplodeSmall
-		EmptyWeapon: UnitExplodeSmall
+		Weapon: UnitExplodeSmallNoDamage
+		EmptyWeapon: UnitExplodeSmallNoDamage
 	GrantRandomCondition@SpawnPilot:
 		Conditions: spawn-pilot, dont-spawn-pilot
 	Explodes@SpawnPilot:
