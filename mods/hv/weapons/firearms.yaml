@@ -225,10 +225,8 @@ BoatMachineGunAir:
 		ValidTargets: Air
 		Versus:
 			None: 75
-			Steel: 10
 			Light: 25
 			Heavy: 10
-			Concrete: 5
 	Warhead@GroundEffect: CreateEffect
 		Explosions: small
 		ValidTargets: Air

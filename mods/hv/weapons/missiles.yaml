@@ -210,11 +210,6 @@ BoatMissileAntiAir:
 			None: 30
 			Light: 90
 			Heavy: 115
-			Concrete: 100
-	Warhead@Incendiary: TreeDamage
-		Spread: 128
-		Damage: 2500
-		Percentage: 90
 	Warhead@Effect: CreateEffect
 		Explosions: small
 		ImpactSounds: explosion06.wav
