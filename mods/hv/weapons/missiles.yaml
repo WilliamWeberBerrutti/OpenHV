@@ -188,7 +188,7 @@ BoatMissileAntiGround:
 BoatMissileAntiAir:
 	ReloadDelay: 50
 	Report: rocketlaunch03.wav
-	Range: 10c0  # 9c0
+	Range:  9c0  # 10c0
 	ValidTargets: Air
 	Burst: 3
 	BurstDelays: 8
@@ -204,12 +204,8 @@ BoatMissileAntiAir:
 		RangeLimit: -1
 	Warhead@Damage: SpreadDamage
 		Spread: 128
-		Damage: 800
+		Damage: 380
 		ValidTargets: Air
-		Versus:
-			None: 30
-			Light: 90
-			Heavy: 115
 	Warhead@Effect: CreateEffect
 		Explosions: small
 		ImpactSounds: explosion06.wav
