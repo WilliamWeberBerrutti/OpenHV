@@ -204,7 +204,7 @@ BoatMissileAntiAir:
 		RangeLimit: -1
 	Warhead@Damage: SpreadDamage
 		Spread: 128
-		Damage: 380
+		Damage: 500 # 450 # 400 # 380
 		ValidTargets: Air
 	Warhead@Effect: CreateEffect
 		Explosions: small
