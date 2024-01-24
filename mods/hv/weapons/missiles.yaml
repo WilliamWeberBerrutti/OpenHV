@@ -176,10 +176,10 @@ BoatMissileAntiGround:
 		Damage: 1000
 		Versus:
 			None: 1500
-			Steel: 80
+			Steel: 90
 			Light: 475
 			Heavy: 190
-			Concrete: 5
+			Concrete: 50
 	Warhead@GroundEffect: CreateEffect
 		Explosions: small
 		ValidTargets: Ground, Tree
