@@ -111,7 +111,7 @@ BOAT:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 46000
+		HP: 45000
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -157,7 +157,7 @@ SUBMARINE2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 46000
+		HP: 45000
 	Armor:
 		Type: Heavy
 	Mobile:
