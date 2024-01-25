@@ -177,7 +177,7 @@ BoatMissileAntiGround:
 		Versus:
 			None: 1500
 			Steel: 90
-			Light: 475
+			Light: 450
 			Heavy: 190
 			Concrete: 50
 	Warhead@GroundEffect: CreateEffect
