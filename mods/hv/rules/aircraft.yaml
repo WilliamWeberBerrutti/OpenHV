@@ -89,7 +89,7 @@ PLANE2:
 		Type: GroundPosition
 	Armament:
 		Weapon: Plasma
-		LocalOffset: 250,200,0, 250,-200,0
+		LocalOffset: 250,0,0
 		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 8
