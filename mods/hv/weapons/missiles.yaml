@@ -163,9 +163,8 @@ BoatMissileAntiGround:
 	Range: 6c0
 	Projectile: Bullet
 		Image: bullet6
-		Speed: 750 # 500 # 250
+		Speed: 750
 		Blockable: false
-		# LaunchAngle: 100
 		Inaccuracy: 0c256
 		ContrailLength: 4
 		ContrailStartWidth: 0c32
@@ -188,7 +187,7 @@ BoatMissileAntiGround:
 BoatMissileAntiAir:
 	ReloadDelay: 50
 	Report: rocketlaunch03.wav
-	Range:  9c0  # 10c0
+	Range: 9c0
 	ValidTargets: Air
 	Burst: 3
 	BurstDelays: 8
@@ -204,7 +203,7 @@ BoatMissileAntiAir:
 		RangeLimit: -1
 	Warhead@Damage: SpreadDamage
 		Spread: 128
-		Damage: 500 # 450 # 400 # 380
+		Damage: 500
 		ValidTargets: Air
 	Warhead@Effect: CreateEffect
 		Explosions: small
