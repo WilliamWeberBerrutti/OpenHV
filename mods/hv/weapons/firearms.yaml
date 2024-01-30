@@ -102,7 +102,7 @@ HelicopterChainGunGround:
 		Versus:
 			None: 540
 			Steel: 60
-			Light: 282
+			Light: 295
 			Heavy: 40
 			Concrete: 20
 	Warhead@Incendiary: TreeDamage
@@ -115,6 +115,7 @@ HelicopterChainGunAir:
 	Warhead@Damage: SpreadDamage
 		Versus:
 			Light: 350
+			Heavy: 34
 
 AircraftChainGunGround:
 	Inherits: ^AircraftChainGun
@@ -130,7 +131,7 @@ AircraftChainGunGround:
 		Versus:
 			None: 800
 			Steel: 108
-			Light: 333
+			Light: 365
 			Heavy: 65
 			Concrete: 63
 	Warhead@Incendiary: TreeDamage
@@ -150,6 +151,7 @@ AircraftChainGunAir:
 		Damage: 375
 		Versus:
 			Light: 207
+			Heavy: 37
 
 ShellCasing:
 	Inherits: SmallSplash
