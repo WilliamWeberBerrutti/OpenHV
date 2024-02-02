@@ -22,6 +22,12 @@ BuildingExplode:
 		ValidTargets: Ground, Air, Water, Lava, Swamp
 		ImpactSounds: explosion02.wav, explosion03.wav
 
+^ExplosionNoDamage:
+	Warhead@Effect: CreateEffect
+		Explosions: small_2
+		ValidTargets: Ground, Air, Water, Lava, Swamp
+		ImpactSounds: explosion02.wav, explosion03.wav
+
 ArtilleryExplode:
 	Inherits: ^Explosion
 	Warhead@Damage: SpreadDamage
@@ -35,12 +41,20 @@ UnitExplodeSmall:
 	Warhead@Damage: SpreadDamage
 		Damage: 4000
 
+UnitExplodeSmallNoDamage:
+	Inherits: ^ExplosionNoDamage
+
 UnitExplodeLarge:
 	Inherits: ^Explosion
 	Warhead@Effect: CreateEffect
 		Explosions: large
 	Warhead@Damage: SpreadDamage
 		Damage: 8000
+
+UnitExplodeLargeNoDamage:
+	Inherits: ^ExplosionNoDamage
+	Warhead@Effect: CreateEffect
+		Explosions: large
 
 PropExplode:
 	Inherits: ^Explosion

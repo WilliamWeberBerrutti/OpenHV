@@ -26,12 +26,16 @@ PLANE1:
 	RevealsShroud@Hacked:
 		Range: 4c0
 		Type: GroundPosition
-	Armament@Primary:
-		Weapon: AircraftChainGun
-		LocalOffset: 256,0,0
+	Armament@Ground:
+		Weapon: AircraftChainGunGround
 		MuzzleSequence: muzzle
+		LocalOffset: 50,0,0
+	Armament@Air:
+		Weapon: AircraftChainGunAir
+		MuzzleSequence: muzzle
+		LocalOffset: 50,0,0
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 92
 		PersistentTargeting: false
 		OpportunityFire: false
 	Aircraft:
@@ -66,7 +70,7 @@ PLANE2:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
 		Prerequisites: techcenter, ~starport.yi
-		Description: Fast Attack Ship\n  Strong vs Vehicles and Buildings\n  Weak vs Pods
+		Description: Fast Attack Ship\n  Strong vs Buildings\n  Can't attack Water, Ground or Air Units
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -74,7 +78,7 @@ PLANE2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 10000
+		HP: 15000
 	RevealsShroud:
 		Range: 11c0
 		MinRange: 4c0
@@ -84,28 +88,29 @@ PLANE2:
 		Range: 4c0
 		Type: GroundPosition
 	Armament:
-		Weapon: ShipMissile
-		LocalOffset: 256,375,0, 256,-375,0
+		Weapon: Plasma
+		LocalOffset: 250,0,0
 		PauseOnCondition: !ammo
 	AmmoPool:
-		Ammo: 4
+		Ammo: 8
 		AmmoCondition: ammo
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+		PipCount: 8
 	ReloadAmmoPool:
-		Delay: 200
-		Count: 2
+		Delay: 100
+		Count: 1
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 92
 		PersistentTargeting: false
 		OpportunityFire: false
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 768
 		TurnSpeed: 20
-		Speed: 200
+		Speed: 155
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 	Voiced:
@@ -162,10 +167,14 @@ COPTER:
 		Offset: 200,0,-100
 	AttackTurreted:
 		RequiresCondition: airborne
-	Armament:
-		Weapon: HelicopterChainGun
-		LocalOffset: 50,0,0
+	Armament@Ground:
+		Weapon: HelicopterChainGunGround
 		MuzzleSequence: muzzle
+		LocalOffset: 50,0,0
+	Armament@Air:
+		Weapon: HelicopterChainGunAir
+		MuzzleSequence: muzzle
+		LocalOffset: 50,0,0
 	Selectable:
 		Bounds: 1228, 1228
 	WithMuzzleOverlay:
@@ -219,11 +228,11 @@ BANSHEE:
 		Queue: Aircraft
 		BuildPaletteOrder: 40
 		Prerequisites: techcenter, ~starport.sc
-		Description: Heavy Helicopter Gunship\n  Strong vs Vehicles and Buildings\n  Weak vs Pods
+		Description: Heavy Helicopter Gunship\n  Strong vs Buildings\n  Can't attack Water, Ground or Air Units
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 10000
+		HP: 15000
 	RevealsShroud:
 		Range: 11c0
 		MinRange: 4c0
@@ -241,9 +250,8 @@ BANSHEE:
 		FacingTolerance: 0
 		RequiresCondition: airborne
 	Armament:
-		Weapon: Plasma
-		MuzzleSequence: muzzle
-		LocalOffset: 700,200,0, 700,-200,0
+		Weapon: ShipMissile
+		LocalOffset: 256,125,0, 256,-125,0
 		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 6
@@ -252,10 +260,10 @@ BANSHEE:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
-		PipCount: 3
+		PipCount: 6
 	ReloadAmmoPool:
 		Delay: 100
-		Count: 2
+		Count: 1
 	Selectable:
 		DecorationBounds: 1228, 1228
 	WithMuzzleOverlay:
@@ -272,7 +280,7 @@ COPTER2:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
 		Prerequisites: ~starport.sc
-		Description: Vehicle Transport Helicopter.\n  Armed with light machine gun.\n\n  Can load pods\n  and lift one vehicle.
+		Description: Vehicle Transport Helicopter.\n  Armed with light missiles.\n  Can load pods\n  and lift one vehicle.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -301,12 +309,12 @@ COPTER2:
 		DecorationBounds: 2048, 1843
 	Turreted:
 		TurnSpeed: 80
-		Offset: 600,0,100
+		Offset: 100,0,100
 	AttackTurreted:
 		RequiresCondition: airborne
 	Armament:
-		Weapon: Vulcan
-		LocalOffset: 0,0,-400
+		Weapon: DropshipMissile
+		LocalOffset: 700,0,0, 700,0,0
 	Cargo:
 		Types: Scout
 		MaxWeight: 8
@@ -411,7 +419,7 @@ DROPSHIP:
 		Queue: Aircraft
 		BuildPaletteOrder: 50
 		Prerequisites: ~starport.yi
-		Description: Vehicle Transport Shuttle.\n  Armed with light missiles.\n  Can load pods\n  and lift one vehicle.
+		Description: Vehicle Transport Shuttle.\n  Armed with light machine gun.\n  Can load pods\n  and lift one vehicle.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -437,12 +445,14 @@ DROPSHIP:
 		Sequence: fly
 		Name: fly
 		RequiresCondition: airborne
-	AttackFrontal:
-		FacingTolerance: 0
+	Turreted:
+		TurnSpeed: 80
+		Offset: 100,0,100
+	AttackTurreted:
 		RequiresCondition: airborne
 	Armament:
-		Weapon: DropshipMissile
-		LocalOffset: 700,500,0, 700,-500,0
+		Weapon: Vulcan
+		LocalOffset: 0,0,-400
 	Selectable:
 		DecorationBounds: 2048, 1848
 	Cargo:
