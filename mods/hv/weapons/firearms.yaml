@@ -44,7 +44,7 @@ BunkerChaingun:
 	Report: ccbysmgfire01.wav
 	Projectile: Bullet
 		Inaccuracy: 0c256
-		Speed: 1000
+		Speed: 2000
 		Shadow: false
 		ContrailLength: 3
 		ContrailStartWidth: 0c32
