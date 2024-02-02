@@ -114,8 +114,8 @@ HelicopterChainGunAir:
 	ValidTargets: Air
 	Warhead@Damage: SpreadDamage
 		Versus:
-			Light: 350
-			Heavy: 34
+			Light: 167
+			Heavy: 23
 
 AircraftChainGunGround:
 	Inherits: ^AircraftChainGun
