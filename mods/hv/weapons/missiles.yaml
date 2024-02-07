@@ -166,7 +166,7 @@ BoatMissileAntiGround:
 	Range: 6c0
 	Projectile: Bullet
 		Image: bullet6
-		Speed: 750
+		Speed: 1000
 		Blockable: false
 		Inaccuracy: 0c256
 		ContrailLength: 4
