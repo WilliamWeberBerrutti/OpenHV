@@ -297,6 +297,7 @@ COPTER2:
 		TurnSpeed: 20
 		Speed: 135
 		AltitudeVelocity: 0c58
+		LandableTerrainTypes: Clear, Ore, Crater, Road, Grass, Grass Pit, Mountain, Snow, Red Snow, Sand, Stone, Tech, Rail, Blocked, Dirt
 	Voiced:
 		VoiceSet: TransportHelicopterVoice
 	WithFacingSpriteBody:
@@ -437,6 +438,7 @@ DROPSHIP:
 		Speed: 135
 		AltitudeVelocity: 0c58
 		InitialFacing: 512
+		LandableTerrainTypes: Clear, Ore, Crater, Road, Grass, Grass Pit, Mountain, Snow, Red Snow, Sand, Stone, Tech, Rail, Blocked, Dirt
 	Voiced:
 		VoiceSet: DropshipVoice
 	WithFacingSpriteBody:
