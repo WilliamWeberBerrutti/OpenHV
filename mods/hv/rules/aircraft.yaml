@@ -587,6 +587,7 @@ LANDEDPOD:
 	-WithIdleOverlay@Shadow:
 
 BOMBER1:
+	Inherits: ^SpawnedPlane
 	Inherits@Exists: ^ExistsInWorld
 	Inherits@Sprite: ^SpriteActor
 	Inherits@Handicaps: ^PlayerHandicaps
@@ -602,14 +603,18 @@ BOMBER1:
 		ZOffset: -256
 	Tooltip:
 		Name: Athmospheric Bomber
+	Health:
+		HP: 2000
+	Armor:
+		Type: Light
 	Valued:
 		Cost: 2000
 	UpdatesPlayerStatistics:
 		AddToAssetsValue: false
 	Aircraft:
-		TurnSpeed: 28
-		Speed: 512
-		Repulsable: False
+		TurnSpeed: 360
+		Speed: 450
+		Repulsable: True
 		Voice: Move
 	RejectsOrders:
 	AttackBomber:
