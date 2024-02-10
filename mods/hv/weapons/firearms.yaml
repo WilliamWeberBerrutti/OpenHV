@@ -113,6 +113,7 @@ HelicopterChainGunAir:
 	Inherits: HelicopterChainGunGround
 	ValidTargets: Air
 	Warhead@Damage: SpreadDamage
+		Damage: 250
 		Versus:
 			Light: 167
 			Heavy: 23
@@ -139,14 +140,8 @@ AircraftChainGunGround:
 		Damage: 375
 
 AircraftChainGunAir:
-	Inherits: ^AircraftChainGun
+	Inherits: AircraftChainGunGround
 	ValidTargets: Air
-	ReloadDelay: 3
-	Range: 6c0
-	MinRange: 1c0
-	Burst: 16
-	Projectile: InstantHit
-		Blockable: false
 	Warhead@Damage: SpreadDamage
 		Damage: 375
 		Versus:
