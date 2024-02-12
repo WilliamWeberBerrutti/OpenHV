@@ -255,7 +255,7 @@ Patriot:
 	Report: rocketlaunch03.wav
 	ValidTargets: Air
 	Projectile: Missile
-		VerticalRateOfTurn: 140
+		VerticalRateOfTurn: 20
 		Speed: 600
 		MinimumLaunchSpeed: 75
 		MaximumLaunchSpeed: 96
@@ -294,7 +294,7 @@ TowerMissile:
 	Report: rocketlaunch03.wav
 	ValidTargets: Air
 	Projectile: Missile
-		VerticalRateOfTurn: 140
+		VerticalRateOfTurn: 20
 		Speed: 600
 		MinimumLaunchSpeed: 75
 		MaximumLaunchSpeed: 96
