@@ -934,6 +934,9 @@ TANKER1:
 		Image: tanker1
 		FactionImages:
 			sc: tanker3
+	Explodes:
+		Weapon: UnitExplodeSmallNoDamage
+		EmptyWeapon: UnitExplodeSmallNoDamage
 
 TANKER2:
 	Inherits: TANKER1
