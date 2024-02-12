@@ -196,7 +196,7 @@ BoatMissileAntiAir:
 	Burst: 3
 	BurstDelays: 8
 	Projectile: Missile
-		Speed: 350
+		Speed: 600
 		Blockable: false
 		Inaccuracy: 128
 		Image: bullet7
@@ -205,6 +205,15 @@ BoatMissileAntiAir:
 		TrailImage: small_smoke
 		CruiseAltitude: 2c0
 		RangeLimit: -1
+		VerticalRateOfTurn: 20
+		MinimumLaunchSpeed: 75
+		MaximumLaunchSpeed: 96
+		HorizontalRateOfTurn: 100
+		Acceleration: 96
+		MinimumLaunchAngle: 128
+		MaximumLaunchAngle: 192
+		AllowSnapping: true
+		CloseEnough: 600
 	Warhead@Damage: SpreadDamage
 		Spread: 128
 		Damage: 500
