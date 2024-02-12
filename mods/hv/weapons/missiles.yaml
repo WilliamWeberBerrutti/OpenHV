@@ -276,7 +276,7 @@ Patriot:
 			None: 30
 			Wood: 90
 			Light: 90
-			Heavy: 115
+			Heavy: 300
 			Concrete: 100
 	Warhead@Incendiary: TreeDamage
 		Spread: 128
