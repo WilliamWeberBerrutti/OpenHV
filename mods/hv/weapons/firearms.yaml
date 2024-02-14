@@ -27,6 +27,7 @@ LightMachineGun:
 BunkerChaingun:
 	Inherits: LightMachineGun
 	ReloadDelay: 10
+	BurstDelays: 3
 	Range: 8c0
 
 ^AircraftChainGun:
