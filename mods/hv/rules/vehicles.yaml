@@ -22,7 +22,7 @@ TANK3:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
-		Range: 6c0
+		Range: 7c0
 		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -74,11 +74,11 @@ AATANK:
 		Speed: 115
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
 	Armament:
@@ -106,7 +106,6 @@ AATANK2:
 
 TRANSPRT:
 	Inherits: ^TrackedVehicle
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -115,7 +114,7 @@ TRANSPRT:
 		Queue: Tank
 		Prerequisites: factory, module
 		BuildPaletteOrder: 40
-		Description: Can transport pods.\nHas fireports for garrisoned units.
+		Description: Can transport pods.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -126,19 +125,15 @@ TRANSPRT:
 		Speed: 110
 		PauseOnCondition: notmobile || ecm-disabled
 	RevealsShroud:
-		Range: 5c0
-		MinRange: 2c0
+		Range: 6c0
+		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 2c0
+		Range: 3c0
 	Cargo:
 		Types: Scout
 		MaxWeight: 5
 		LoadingCondition: notmobile
-	AttackGarrisoned:
-		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
 	Selectable:
 		DecorationBounds: 2048, 1843
 	WithCargoPipsDecoration:
@@ -173,7 +168,7 @@ ARTIL:
 		Speed: 95
 		Locomotor: wheeled
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -388,11 +383,11 @@ TANK5:
 		Speed: 80
 		TurnSpeed: 25
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 9c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 
 TANK10:
 	Inherits: ^TrackedVehicle
@@ -417,11 +412,11 @@ TANK10:
 		Speed: 80
 		TurnSpeed: 25
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 9c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 	Armament:
 		Weapon: VoltageArc
 		LocalOffset: 300,0,0
@@ -441,7 +436,7 @@ TANK7:
 		Prerequisites: ~factory.yi, techcenter
 		Description: Cloaked missile tank.\n  Strong vs Vehicles and Buildings\n  Weak vs Pods
 	Valued:
-		Cost: 900
+		Cost: 1200
 	Tooltip:
 		Name: Stealth Tank
 	UpdatesPlayerStatistics:
@@ -460,7 +455,7 @@ TANK7:
 	Mobile:
 		Speed: 120
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -511,7 +506,7 @@ TANK11:
 		TurnSpeed: 25
 		Speed: 90
 	RevealsShroud:
-		Range: 6c0
+		Range: 7c0
 		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -526,8 +521,15 @@ TANK12:
 	Armament:
 		Weapon: doublecannon
 		LocalOffset: 500,85,50, 500,-85,50
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 15
+		Speed: 80
 
-TANK15:
+TANK8:
 	Inherits: ^TrackedVehicle
 	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
 	Valued:
@@ -539,7 +541,7 @@ TANK15:
 		Queue: Tank
 		Prerequisites: ~factory.sc, techcenter, tradplat
 		BuildPaletteOrder: 60
-		Description: Disables units for a brief moment.\n  Jams incoming missiles.
+		Description: Disrupts satellite video links\nand obscures the battlefield.\n  Disables units for a brief moment.
 	Armament:
 		Weapon: ElectronicCountermeasure
 	AttackFrontal:
@@ -549,20 +551,24 @@ TANK15:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 30000
+		HP: 7500
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		Speed: 110
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
 		Range: 4c0
-	JamsMissiles:
-		Range: 5c0
-		DeflectionRelationships: Neutral, Enemy
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+	CreatesShroud:
+		Range: 9c0
+		RequiresCondition: deployed
+	RenderShroudCircle:
+		RequiresCondition: deployed
 	DetectCloaked:
 		Range: 2c0
 
@@ -641,7 +647,7 @@ BUILDER:
 	RevealsShroud@Hacked:
 		Range: 3c0
 	RenderSprites:
-		Image: builder1
+		Image: builder4
 	GrantConditionOnTerrain:
 		Condition: validterrain
 		TerrainTypes: Clear, Road, Crater, Grass, Grass Pit, Ore, Mountain, Rock, Ice, Snow, Sand, Stone, Tech, Dirt
@@ -663,8 +669,6 @@ BUILDER2:
 	Inherits: BUILDER
 	Buildable:
 		Prerequisites: ~structures.sc
-	RenderSprites:
-		Image: builder4
 	Transforms:
 		IntoActor: outpost2
 
@@ -781,16 +785,16 @@ MISSILETANK:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 
-TANK8:
+TANK15:
 	Inherits: ^TrackedVehicle
 	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Tank
 		BuildPaletteOrder: 60
 		Prerequisites: ~factory.yi, radar, tradplat
-		Description: Disrupts satellite video links\nand obscures the battlefield.\n  Temporarily changes allegiance of targeted units.
+		Description: Jams incoming missiles.\n  Temporarily changes allegiance of targeted units.
 	Valued:
-		Cost: 700
+		Cost: 1000
 	Tooltip:
 		Name: Hacker Tank
 	UpdatesPlayerStatistics:
@@ -802,17 +806,14 @@ TANK8:
 	Mobile:
 		Speed: 150
 	RevealsShroud:
-		Range: 7c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
+		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
-	GrantConditionOnDeploy:
-		DeployedCondition: deployed
-	CreatesShroud:
-		Range: 9c0
-		RequiresCondition: deployed
-	RenderShroudCircle:
-		RequiresCondition: deployed
+		Range: 4c0
+	JamsMissiles:
+		Range: 5c0
+		DeflectionRelationships: Neutral, Enemy
 	Armament:
 		Weapon: HackBack
 	AttackFrontal:
@@ -827,7 +828,7 @@ TANK1:
 		GenericName: Buggy
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: module, ~factory.yi
+		Prerequisites: module, ~factory.sc
 		Queue: Tank
 		Description: Fires a machine gun. \n  Strong vs Pods\n  Weak vs Tanks, Buildings
 	Turreted:
@@ -845,13 +846,14 @@ TANK1:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 7500
+		HP: 10000
 	Armor:
 		Type: Light
 	Mobile:
+		TurnSpeed: 50
 		Speed: 140
 	RevealsShroud:
-		Range: 6c0
+		Range: 7c0
 		MinRange: 3c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
@@ -867,7 +869,7 @@ TANK2:
 		GenericName: Bike
 	Buildable:
 		Queue: Tank
-		Prerequisites: module, ~factory.sc
+		Prerequisites: module, ~factory.yi
 		BuildPaletteOrder: 30
 		Description: Fires a machine gun. \n  Strong vs Pods\n  Weak vs Tanks, Buildings
 	AttackFrontal:
@@ -889,11 +891,11 @@ TANK2:
 		TurnSpeed: 100
 		Speed: 170
 	RevealsShroud:
-		Range: 6c0
-		MinRange: 3c0
+		Range: 8c0
+		MinRange: 4c0
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
-		Range: 3c0
+		Range: 4c0
 
 TANKER1:
 	Inherits: ^Vehicle
