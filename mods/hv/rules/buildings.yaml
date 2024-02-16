@@ -1105,11 +1105,11 @@ BUNKER:
 	HitShape:
 		Type: Circle
 			Radius: 512
-	WithRangeCircle:
-		Type: Turret
-		Width: 2
-		BorderWidth: 3
-		Range: 8c0
+		WithRangeCircle:
+			Type: Turret
+			Width: 2
+			BorderWidth: 3
+			Range: 8c0
 	RevealsShroud:
 		Range: 9c0
 	Cargo:
