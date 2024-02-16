@@ -528,7 +528,7 @@ DRONE:
 		VTOL: true
 		Repulsable: false
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 92
 		Voice: Attack
 	AmmoPool:
 		Ammo: 5
