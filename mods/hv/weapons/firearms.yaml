@@ -227,6 +227,10 @@ BoatMachineGunAir:
 		Spread: 126
 		Damage: 150
 		ValidTargets: Air
+		Versus:
+			None: 75
+			Light: 25
+			Heavy: 10
 	Warhead@GroundEffect: CreateEffect
 		Explosions: small
 		ValidTargets: Air

@@ -219,6 +219,10 @@ BoatMissileAntiAir:
 		Spread: 128
 		Damage: 500 # 450 # 400 # 380
 		ValidTargets: Air
+		Versus:
+			None: 30
+			Light: 90
+			Heavy: 115
 	Warhead@Effect: CreateEffect
 		Explosions: small
 		ImpactSounds: explosion06.wav
