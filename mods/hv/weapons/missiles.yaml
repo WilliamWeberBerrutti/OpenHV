@@ -373,6 +373,7 @@ Torpedo:
 		TrailImage: bubble
 		HorizontalRateOfTurn: 60
 		VerticalRateOfTurn: 60
+		CruiseAltitude: 0
 		RangeLimit: -1
 	Warhead@Effect: CreateEffect
 		Explosions: small
