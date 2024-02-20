@@ -18,7 +18,7 @@ TANK3:
 		TurnSpeed: 25
 		Speed: 95
 	Health:
-		HP: 47000
+		HP: 46000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
