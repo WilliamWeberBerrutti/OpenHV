@@ -33,6 +33,25 @@
 		ValidTargets: Ground
 		ImpactSounds: explosion06.wav
 
+^CannonYi:
+	Inherits: ^Cannon
+	ReloadDelay: 53
+	Projectile: Bullet
+		Image: bullet5
+	Warhead@Damage: SpreadDamage
+		DamageTypes: Fire
+		ValidTargets: Ground, Water, Tree, Lava, Swamp
+		Spread: 128
+		Damage: 3000
+		Versus:
+			None: 20
+			Steel: 75
+			Light: 100
+			Heavy: 130
+			Wood: 75
+	Warhead@Incendiary: TreeDamage
+		Damage: 3000
+
 ^Artillery:
 	Inherits: ^Cannon
 	Report: howitzerfire01.wav
