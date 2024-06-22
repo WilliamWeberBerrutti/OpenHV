@@ -285,7 +285,7 @@ CHOPPER:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 30000
+		HP: 45000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -419,7 +419,7 @@ DROPSHIP:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 30000
+		HP: 45000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -547,7 +547,7 @@ DRONE2:
 	Tooltip:
 		Name: actor-drone2.name
 	Health:
-		HP: 5000
+		HP: 7500
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -569,13 +569,14 @@ DRONE2:
 		VTOL: true
 		Repulsable: false
 	AttackAircraft:
-		FacingTolerance: 92
+		FacingTolerance: 256
 		Voice: Attack
 	AmmoPool:
-		Ammo: 50
+		Ammo: 250
+		ReloadCount: 15
 		AmmoCondition: ammo
 	CarrierChild:
-		LandingDistance: 8c0
+		LandingDistance: 16c0
 	Rearmable:
 		RearmActors: mothership
 	WithMuzzleOverlay:
@@ -682,7 +683,7 @@ AIRLIFTER:
 MOTHERSHIP:
 	Inherits: ^Helicopter
 	Inherits@Smoke: ^SmokeEmitter
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
+	Inherits@AutoTarget: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 6000
 	Tooltip:
@@ -690,12 +691,13 @@ MOTHERSHIP:
 	Buildable:
 		Queue: Aircraft
 		BuildPaletteOrder: 100
-		Prerequisites: ~disabled
+		BuildLimit: 1
+		Prerequisites: radar, techcenter, ~starport.sc
 		Description: actor-mothership.description
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 100000
+		HP: 250000
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -722,6 +724,9 @@ MOTHERSHIP:
 	SpawnActorOnDeath:
 		Actor: MOTHERSHIP.Husk
 		RequiresCondition: airborne
+	AutoTarget:
+		InitialStance: Defend
+		InitialStanceAI: AttackAnything
 	CarrierParent:
 		Actors: drone2, drone2, drone2, drone2, drone2
 		RespawnTicks: 100
@@ -747,7 +752,7 @@ MOTHERSHIP:
 	Armament@LaserTurret:
 		Name: secondary
 		Weapon: MothershipLaser
-		LocalOffset: 500,300,-100, 500,-300,-100
+		LocalOffset: 300,300,-100, 300,-300,-100, -300,300,-100, -300,-300,-100
 	Voiced:
 		VoiceSet: MotherShipVoice
 	-GrantRandomCondition@SpawnPilot:
