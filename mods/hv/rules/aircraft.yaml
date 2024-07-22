@@ -690,7 +690,7 @@ MOTHERSHIP:
 	Buildable:
 		Queue: Aircraft
 		BuildPaletteOrder: 100
-		Prerequisites: ~disabled
+		Prerequisites: radar, trader, techcenter
 		Description: actor-mothership.description
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
