@@ -344,6 +344,10 @@ RailgunStrike:
 		ValidTargets: Ground, Water, Air, Tree, Lava, Swamp
 		DamageTypes: Fire
 		AffectsParent: true
+		Warhead@Damage: SpreadDamage
+		Versus:
+			Light: 150
+			Heavy: 125
 	Warhead@IncendiaryImpact: TreeDamage
 		Spread: 1c0
 		Damage: 10000

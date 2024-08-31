@@ -1574,7 +1574,7 @@ UPLINK:
 		PauseOnCondition: lowpower
 		Icon: railgun
 		Cursor: railgun
-		ChargeInterval: 4500
+		ChargeInterval: 4500 # 6750 # 13500 # 4500
 		Name: actor-uplink.railgun-name
 		Description: actor-uplink.railgun-description
 		DisplayTimerRelationships: Ally, Neutral, Enemy
