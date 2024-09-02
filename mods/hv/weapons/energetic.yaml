@@ -152,6 +152,41 @@ Plasma:
 		ImpactSounds: explosion06.ogg
 		ValidTargets: Ground, Air, Ship, Tree
 
+PodPlasma:
+	Inherits: BigSplash
+	ValidTargets: Ground, Water, Tree, Lava, Swamp
+	Burst: 2
+	BurstDelays: 0
+	ReloadDelay: 20
+	Range: 6c0
+	Report: lasercannon_newlocknew.ogg
+	Projectile: Missile
+		Speed: 350
+		Blockable: false
+		Inaccuracy: 0
+		Image: bullet8
+	Warhead@Smudge: LeaveSmudge
+		SmudgeType: Crater
+		Chance: 25
+		InvalidTargets: Vehicle, Structure
+	Warhead@Damage: SpreadDamage
+		ValidTargets: Water, Air, Ground, Tree, Lava, Swamp
+		Spread: 24
+		Damage: 600 # 300
+		Versus:
+			None: 300
+			Steel: 25
+			Light: 55
+			Heavy: 20
+			Concrete: 5
+	Warhead@Incendiary: TreeDamage
+		Spread: 24
+		Damage: 600 # 300
+	Warhead@Effect: CreateEffect
+		Explosions: small
+		ImpactSounds: explosion06.ogg
+		ValidTargets: Ground, Air, Ship, Tree
+
 VoltageArc:
 	ReloadDelay: 50
 	Range: 8c0

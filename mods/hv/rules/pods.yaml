@@ -6,7 +6,7 @@ RIFLEMAN:
 	Buildable:
 		Queue: Pod
 		Description: actor-rifleman.description
-		Prerequisites: ~module
+		Prerequisites: ~disabled # ~module
 		BuildPaletteOrder: 10
 	Encyclopedia:
 		Description: actor-rifleman.encyclopedia
@@ -330,7 +330,7 @@ JETPACKER:
 	Buildable:
 		Queue: Pod
 		Description: actor-jetpacker.description
-		Prerequisites: ~module, techcenter
+		Prerequisites: ~module.yi, techcenter
 		BuildPaletteOrder: 60
 	Encyclopedia:
 		Description: actor-jetpacker.encyclopedia
@@ -341,16 +341,16 @@ JETPACKER:
 	Tooltip:
 		Name: actor-jetpacker.name
 	Health:
-		HP: 9000
+		HP: 9000 # 8100
 	Aircraft:
-		TurnSpeed: 50
+		TurnSpeed: 50 # 55
 		CruiseAltitude: 1c0
-		Speed: 100
+		Speed: 100 # 110
 		IdealSeparation: 1c0
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Armament:
-		Weapon: HeavyMachineGun
+		Weapon: PodPlasma # HeavyMachineGun
 		MuzzleSequence: muzzle
 		LocalOffset: 0,-300,0,   0,300,0
 	AttackFrontal:
@@ -370,6 +370,18 @@ JETPACKER:
 		Type: GroundPosition
 	Voiced:
 		VoiceSet: JetpackerVoice
+
+JETPACKER2:
+	Inherits: JETPACKER
+	Buildable:
+		Prerequisites: ~module.sc, techcenter
+	Health:
+		HP: 9000
+	Aircraft:
+		TurnSpeed: 50
+		Speed: 100
+	Armament:
+		Weapon: HeavyMachineGun
 
 BLASTER:
 	Inherits: ^Pod
