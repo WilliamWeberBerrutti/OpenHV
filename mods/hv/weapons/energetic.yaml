@@ -548,7 +548,7 @@ BrokerWireTransfer:
 	ReloadDelay: 5
 	Report: klink.ogg
 	Warhead@Leech: RobMoney
-		Amount: 500
+		Amount: 250
 		RobbedTextNotification: robbed-notification
 		RobTextNotification: rob-notification
 
