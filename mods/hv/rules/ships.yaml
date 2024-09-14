@@ -235,7 +235,7 @@ SUBMARINE:
 
 RAILGUNBOAT:
 	Inherits: ^Ship
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
+	Inherits@AutoTarget: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 4000
 	Tooltip:
@@ -269,17 +269,22 @@ RAILGUNBOAT:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
-	Armament:
+	Armament@Primary:
 		Weapon: Railgun
 		Recoil: 100
 		RecoilRecovery: 25
+		LocalOffset: 500,0,0
+	Armament@Secondary:
+		Weapon: BoatLaser
+		Recoil: 50
+		RecoilRecovery: 12
 		LocalOffset: 500,0,0
 	AttackTurreted:
 	WithSpriteTurret:
 
 LIGHTNINGBOAT:
 	Inherits: ^Ship
-	Inherits@AutoTarget: ^AutoTargetGroundAssaultMove
+	Inherits@AutoTarget: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 4000
 	Tooltip:
@@ -313,12 +318,16 @@ LIGHTNINGBOAT:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
-	Armament:
+	Armament@Primary:
 		Weapon: VoltageArc
 		LocalOffset: 0,0,100
+	Armament@Secondary:
+		Weapon: VoltageArcAir
+		LocalOffset: 0,0,100
 	AttackTurreted:
-	WithAttackAnimation:
-		Sequence: shoot
+	# TODO: Fix the attack animations later! It's crashing for some reason!
+	# WithAttackAnimation:
+	# 	Sequence: shoot
 	WithAttackOverlay:
 		Sequence: charge
 
