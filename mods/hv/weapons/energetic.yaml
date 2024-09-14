@@ -196,31 +196,6 @@ VoltageArc:
 		AffectsParent: true
 		ValidTargets: Ground, Water, Vehicle, Lava, Swamp
 
-VoltageArcAir:
-	Inherits: VoltageArc
-	ReloadDelay: 5
-	ValidTargets: Air
-	Projectile: EnergyBolt
-		Radius: 2
-		Duration: 5
-		InnerLightness: 255
-		OuterLightness: 32 # 128 # 80
-		Color: 9bc2eb
-		Distortion: 200
-		DistortionAnimation: 150
-		SegmentLength: 0c512
-		ZOffset: 2048
-	Warhead@Damage: SpreadDamage
-		ValidTargets: Air
-		Spread: 128
-		Damage: 648
-		Versus:
-			None: 200
-			Steel: 75
-			Light: 125
-			Heavy: 155
-			Wood: 10
-
 PodVoltageArc:
 	Inherits: VoltageArc
 	Range: 5c512
@@ -545,31 +520,6 @@ MothershipLaser:
 		Explosions: small
 		ImpactSounds: explosion06.ogg
 		ValidTargets: Ground, Air, Ship, Tree
-
-BoatLaser:
-	Inherits: MothershipLaser
-	ReloadDelay: 6
-	ValidTargets: Air
-	Report: raygun_newlocknew.ogg
-	Projectile: Missile
-		ContrailLength: 3
-		ContrailStartWidth: 0c100
-		ContrailEndWidth: 0c32
-		Blockable: False
-		HorizontalRateOfTurn: 100
-		Acceleration: 96
-		AllowSnapping: true
-		Jammable: False
-	Warhead@Damage: SpreadDamage
-		ValidTargets: Air
-		Spread: 128
-		Damage: 810
-		Versus:
-			None: 200
-			Steel: 75
-			Light: 125
-			Heavy: 155
-			Wood: 10
 
 ^BrokerWireTransfer:
 	Range: 12c0
