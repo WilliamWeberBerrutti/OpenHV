@@ -33,6 +33,12 @@ Railgun:
 		ValidTargets: Ground
 		ImpactSounds: explosion06.ogg
 
+RailgunPowered:
+	Inherits: Railgun
+	Range: 10c0
+	Projectile: LaserZap
+		Color: FEFE03 # 1A1AFE
+
 ElectronicCountermeasure:
 	ReloadDelay: 20
 	Range: 8c0

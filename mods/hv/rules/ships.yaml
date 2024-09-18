@@ -269,13 +269,37 @@ RAILGUNBOAT:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
-	Armament:
+	Armament@Primary:
+		RequiresCondition: undeployed
 		Weapon: Railgun
+		Recoil: 100
+		RecoilRecovery: 25
+		LocalOffset: 500,0,0
+	Armament@Secondary:
+		RequiresCondition: !undeployed
+		Weapon: RailgunPowered
 		Recoil: 100
 		RecoilRecovery: 25
 		LocalOffset: 500,0,0
 	AttackTurreted:
 	WithSpriteTurret:
+	GrantConditionOnDeploy:
+		PauseOnCondition: jammed
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Voice: Move
+	# RangeMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 125
+	WithRangeCircle:
+		RequiresCondition: !undeployed
+		Color: FE0303
+		Type: Turret
+		Width: 2
+		BorderWidth: 3
+		Range: 10c0
 
 LIGHTNINGBOAT:
 	Inherits: ^Ship
@@ -302,6 +326,7 @@ LIGHTNINGBOAT:
 	Armor:
 		Type: Heavy
 	Mobile:
+		RequiresCondition: undeployed
 		Speed: 75
 		TurnSpeed: 40
 		CanMoveBackward: true
@@ -314,6 +339,7 @@ LIGHTNINGBOAT:
 	Turreted:
 		TurnSpeed: 40
 	Armament:
+		RequiresCondition: undeployed
 		Weapon: VoltageArc
 		LocalOffset: 0,0,100
 	AttackTurreted:
@@ -321,6 +347,33 @@ LIGHTNINGBOAT:
 		Sequence: shoot
 	WithAttackOverlay:
 		Sequence: charge
+	GrantConditionOnDeploy:
+		PauseOnCondition: jammed
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Voice: Move
+	# RangeMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 125
+	WithRangeCircle:
+		RequiresCondition: !undeployed
+		Color: 9999FA
+		Type: Turret
+		Width: 2
+		BorderWidth: 3
+		Range: 3c0
+	ProximityExternalCondition:
+		RequiresCondition: !undeployed
+		Condition: lightning-damage-increase
+		Range: 3c0
+	FirepowerMultiplier:
+		RequiresCondition: undeployed && lightning-damage-increase
+		Modifier: 120
+	ExternalCondition:
+		RequiresCondition: !undeployed
+		Condition: lightning-damage-increase
 
 BOOMER:
 	Inherits: ^Submarine
