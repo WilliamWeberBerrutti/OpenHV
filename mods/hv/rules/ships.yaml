@@ -11,7 +11,7 @@ LIGHTBOAT:
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Ship
-		Prerequisites: ~harbor.yi
+		Prerequisites: ~harbor.sc
 		BuildPaletteOrder: 10
 		Description: actor-lightboat.description
 	Encyclopedia:
@@ -59,7 +59,7 @@ PATROLBOAT:
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Ship
-		Prerequisites: ~harbor.sc
+		Prerequisites: ~harbor.yi
 		BuildPaletteOrder: 10
 		Description: actor-patrolboat.description
 	Encyclopedia:
@@ -92,7 +92,7 @@ PATROLBOAT:
 		LocalOffset: 250,-25,50, 250,25,50
 	Armament@Ground:
 		Weapon: BoatMissileAntiGround
-		MuzzleSequence: muzzle
+		# MuzzleSequence: muzzle
 		Recoil: 100
 		RecoilRecovery: 38
 		LocalOffset: 250,-25,50, 250,25,50
@@ -158,7 +158,7 @@ TORPEDOBOAT:
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Ship
-		Prerequisites: ~harbor.yi, radar
+		Prerequisites: ~harbor.sc, radar
 		BuildPaletteOrder: 30
 		Description: actor-torpedoboat.description
 	Encyclopedia:
@@ -201,7 +201,7 @@ SUBMARINE:
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Ship
-		Prerequisites: ~harbor.sc, radar
+		Prerequisites: ~harbor.yi, radar
 		BuildPaletteOrder: 30
 		Description: actor-submarine.description
 	Encyclopedia:
@@ -269,13 +269,37 @@ RAILGUNBOAT:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
-	Armament:
+	Armament@Primary:
+		RequiresCondition: undeployed
 		Weapon: Railgun
+		Recoil: 100
+		RecoilRecovery: 25
+		LocalOffset: 500,0,0
+	Armament@Secondary:
+		RequiresCondition: !undeployed
+		Weapon: RailgunPowered
 		Recoil: 100
 		RecoilRecovery: 25
 		LocalOffset: 500,0,0
 	AttackTurreted:
 	WithSpriteTurret:
+	GrantConditionOnDeploy:
+		PauseOnCondition: jammed
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Voice: Move
+	# RangeMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 125
+	WithRangeCircle:
+		RequiresCondition: !undeployed
+		Color: FE0303
+		Type: Turret
+		Width: 2
+		BorderWidth: 3
+		Range: 10c0
 
 LIGHTNINGBOAT:
 	Inherits: ^Ship
@@ -302,6 +326,7 @@ LIGHTNINGBOAT:
 	Armor:
 		Type: Heavy
 	Mobile:
+		RequiresCondition: undeployed
 		Speed: 75
 		TurnSpeed: 40
 		CanMoveBackward: true
@@ -314,6 +339,7 @@ LIGHTNINGBOAT:
 	Turreted:
 		TurnSpeed: 40
 	Armament:
+		RequiresCondition: undeployed
 		Weapon: VoltageArc
 		LocalOffset: 0,0,100
 	AttackTurreted:
@@ -321,6 +347,33 @@ LIGHTNINGBOAT:
 		Sequence: shoot
 	WithAttackOverlay:
 		Sequence: charge
+	GrantConditionOnDeploy:
+		PauseOnCondition: jammed
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Voice: Move
+	# RangeMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 125
+	WithRangeCircle:
+		RequiresCondition: !undeployed
+		Color: 9999FA
+		Type: Turret
+		Width: 2
+		BorderWidth: 3
+		Range: 3c0
+	ProximityExternalCondition:
+		RequiresCondition: !undeployed
+		Condition: lightning-damage-increase
+		Range: 3c0
+	FirepowerMultiplier:
+		RequiresCondition: undeployed && lightning-damage-increase
+		Modifier: 120
+	ExternalCondition:
+		RequiresCondition: !undeployed
+		Condition: lightning-damage-increase
 
 BOOMER:
 	Inherits: ^Submarine
@@ -333,7 +386,7 @@ BOOMER:
 	Buildable:
 		Queue: Ship
 		BuildAtProductionType: Ship
-		Prerequisites: ~harbor.sc, techcenter
+		Prerequisites: ~harbor.yi, techcenter
 		BuildPaletteOrder: 60
 		Description: actor-boomer.description
 	Encyclopedia:
@@ -393,8 +446,9 @@ SLCM:
 		LaunchAcceleration: 8
 		HitAcceleration: 0
 		LaunchSounds: missile_julien-nicolas.ogg
+	# TODO: Maybe have a custom trail graphic?
 	LeavesTrails:
-		Image: smoke
+		Image: stealthtank-trail
 		MovingInterval: 2
 		Type: CenterPosition
 		SpawnAtLastPosition: false
@@ -409,7 +463,7 @@ CARRIER:
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 60
-		Prerequisites: ~harbor.yi, techcenter
+		Prerequisites: ~harbor.sc, techcenter
 		Description: actor-carrier.description
 	Encyclopedia:
 		Description: actor-carrier.encyclopedia
