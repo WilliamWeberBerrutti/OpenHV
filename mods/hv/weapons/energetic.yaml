@@ -338,6 +338,17 @@ LightningBoltLight:
 		ImpactSounds: explosion06.ogg
 		ValidTargets: Ground, Air, Ship, Tree, Lava, Swamp
 
+LightningBoltLightFast:
+	Inherits: LightningBoltLight
+	ReloadDelay: 6
+	Projectile: EnergyBolt
+		Color: 7ba2eb
+	Warhead@Damage: SpreadDamage
+		Spread: 128
+		Damage: 200
+	Warhead@Incendiary: TreeDamage
+		Damage: 200
+
 ^PixelSpark:
 	Range: 1c0
 	MinRange: 512
