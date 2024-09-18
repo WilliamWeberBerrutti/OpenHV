@@ -33,6 +33,12 @@ Railgun:
 		ValidTargets: Ground
 		ImpactSounds: explosion06.ogg
 
+RailgunPowered:
+	Inherits: Railgun
+	Range: 10c0
+	Projectile: LaserZap
+		Color: FEFE03 # 1A1AFE
+
 ElectronicCountermeasure:
 	ReloadDelay: 20
 	Range: 8c0
@@ -286,6 +292,17 @@ LightningBoltLight:
 		Explosions: small
 		ImpactSounds: explosion06.ogg
 		ValidTargets: Ground, Air, Ship, Tree, Lava, Swamp
+
+LightningBoltLightFast:
+	Inherits: LightningBoltLight
+	ReloadDelay: 6
+	Projectile: EnergyBolt
+		Color: 7ba2eb
+	Warhead@Damage: SpreadDamage
+		Spread: 128
+		Damage: 200
+	Warhead@Incendiary: TreeDamage
+		Damage: 200
 
 ^PixelSpark:
 	Range: 1c0

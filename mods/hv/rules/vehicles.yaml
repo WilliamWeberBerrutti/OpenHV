@@ -97,11 +97,11 @@ AATANK:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 40
-	Armament:
-		Weapon: Patriot
-		Recoil: 125
-		RecoilRecovery: 38
-		LocalOffset: 250,250,150, 250,-250,150
+	# Armament:
+	# 	Weapon: Patriot
+	# 	Recoil: 125
+	# 	RecoilRecovery: 38
+	# 	LocalOffset: 250,250,150, 250,-250,150
 	AttackTurreted:
 		PauseOnCondition: jammed
 		Voice: Attack
@@ -120,10 +120,17 @@ AATANK2:
 		ImmovableCondition: !undeployed
 		RequireForceMoveCondition: !undeployed
 	Armament:
+		# RequiresCondition: undeployed
 		Weapon: LightningBoltLight
 		Recoil: 125
 		RecoilRecovery: 38
 		LocalOffset: 200,0,200
+	# Armament@Secondary:
+	# 	RequiresCondition: !undeployed
+	# 	Weapon: LightningBoltLightFast
+	# 	Recoil: 125
+	# 	RecoilRecovery: 38
+	# 	LocalOffset: 200,0,200
 	WithTurretAttackAnimation:
 		Sequence: shoot
 	GrantConditionOnDeploy:
@@ -133,17 +140,21 @@ AATANK2:
 		UndeployOnMove: true
 		UndeployOnPickup: true
 		Facing: 512
-		AllowedTerrainTypes: Clear, Road, Crater, Grass, Grass Ramp, Grass Pit, Ore, Mountain, Mountain Ramp, Rock, Ice, Snow, Snow Ramp, Sand, Sand Ramp, Black Sand, Black Sand Ramp, Stone, Tech, Dirt
 		Voice: Move
-	RangeMultiplier@DEPLOYED:
+	# RangeMultiplier@DEPLOYED:
+	FirepowerMultiplier@DEPLOYED:
 		RequiresCondition: !undeployed
-		Modifier: 150
+		Modifier: 120
+	# ReloadDelayMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 10
 	WithRangeCircle:
 		RequiresCondition: !undeployed
+		Color: 9999FA
 		Type: Turret
 		Width: 2
 		BorderWidth: 3
-		Range: 12c0
+		Range: 8c0
 	# WithFacingSpriteBody:
 	# 	RequiresCondition: undeployed
 
@@ -326,7 +337,6 @@ RADARTANK:
 		UndeployOnMove: true
 		UndeployOnPickup: true
 		Facing: 512
-		AllowedTerrainTypes: Clear, Road, Crater, Grass, Grass Ramp, Grass Pit, Ore, Mountain, Mountain Ramp, Rock, Ice, Snow, Snow Ramp, Sand, Sand Ramp, Black Sand, Black Sand Ramp, Stone, Tech, Dirt
 		Voice: Move
 	Repairable:
 		RequireForceMoveCondition: !undeployed
@@ -473,8 +483,13 @@ RAILGUNTANK:
 		Prerequisites: ~factory.sc, techcenter
 		BuildPaletteOrder: 70
 		Description: actor-railguntank.description
-	Armament:
+	Armament@Primary:
+		RequiresCondition: undeployed
 		Weapon: railgun
+		LocalOffset: 325,400,0
+	Armament@Secondary:
+		RequiresCondition: !undeployed
+		Weapon: railgunpowered
 		LocalOffset: 325,400,0
 	AttackFrontal:
 		PauseOnCondition: jammed
@@ -495,6 +510,23 @@ RAILGUNTANK:
 		RevealGeneratedShroud: False
 	RevealsShroud@Hacked:
 		Range: 4c0
+	GrantConditionOnDeploy:
+		PauseOnCondition: jammed
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		UndeployOnMove: true
+		UndeployOnPickup: true
+		Voice: Move
+	# RangeMultiplier@DEPLOYED:
+	# 	RequiresCondition: !undeployed
+	# 	Modifier: 125
+	WithRangeCircle:
+		RequiresCondition: !undeployed
+		Color: FE0303
+		Type: Turret
+		Width: 2
+		BorderWidth: 3
+		Range: 10c0
 
 LIGHTNINGTANK:
 	Inherits: ^TrackedVehicle
