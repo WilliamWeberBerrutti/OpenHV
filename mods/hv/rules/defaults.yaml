@@ -201,9 +201,6 @@
 		UseDeathTypeSuffix: false
 		DeathSequencePalette: green
 		FallbackSequence: die
-	Crushable:
-		CrushClasses: Pods
-		WarnProbability: 50
 	RevealsShroud:
 		Range: 4c0
 		MinRange: 2c0
