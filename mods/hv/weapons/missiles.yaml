@@ -85,10 +85,10 @@ MissileTankRocket:
 			None: 8
 			Steel: 50
 			Light: 75
-			Heavy: 79
+			Heavy: 95
 			Concrete: 50
 	Warhead@Incendiary: TreeDamage
-		Damage: 6000
+		Damage: 2750
 
 LightPodRocket:
 	Inherits: SmallSplash
